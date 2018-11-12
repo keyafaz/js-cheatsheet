@@ -1,0 +1,20 @@
+class Temperature {
+  constructor(celcius) {
+    this.celcius = celcius
+  }
+  get fahrenheit() {
+    return this.celcius * 1.8 + 32
+  }
+  set fahrenheit(value) {
+    this.celcius = (value - 32) / 1.8
+  }
+
+  // inside a class, methods that have 'static' written before name are stored on contructor
+  static fromFahrenheit(value) {
+    return new Temperature((value - 32 / 1.8))
+  }
+}
+
+let temp = new Temperature(22)
+console.log (temp.fahrenheit, temp.fahrenheit = 86, temp.celcius)
+// 71.6, 86, 30
